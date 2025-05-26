@@ -10,18 +10,18 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
 
-# 상대 경로로 임포트
-from config.settings import AppConfig
-from pages.chat_page import ChatPage
-from utils.session_manager import SessionManager
-
 # 앱 설정
+from frontend.config.settings import AppConfig
 st.set_page_config(
     page_title=AppConfig.PAGE_TITLE,
     page_icon=AppConfig.PAGE_ICON,
     layout=AppConfig.LAYOUT,
     initial_sidebar_state="collapsed"
 )
+
+# 상대 경로로 임포트
+from frontend.pages.chat_page import ChatPage
+from frontend.utils.session_manager import SessionManager
 
 def main():
     """메인 앱 실행"""
