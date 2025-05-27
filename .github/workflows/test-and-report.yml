@@ -3,7 +3,7 @@ name: Test and Report Coverage
 on:
   push:
     branches:
-      - '**'  # 모든 브랜치에 대한 푸시
+      - main  # 모든 브랜치에 대한 푸시
   pull_request:
     branches:
       - main  # main 브랜치로의 PR만 실행
