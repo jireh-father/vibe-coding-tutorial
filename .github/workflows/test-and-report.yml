@@ -37,13 +37,14 @@ jobs:
           genbadge coverage -i coverage.xml -o coverage-badge.svg
       
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
+          token: ${{ secrets.CODECOV_TOKEN }}
       
       - name: Store coverage report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: |
